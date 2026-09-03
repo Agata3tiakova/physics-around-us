@@ -1,0 +1,203 @@
+{
+  "id": "study_room_01",
+  "number": 2,
+  "nav_title": "Study Room",
+  "title": "Light in the Study Room",
+  "page_title": "Study Room Investigation",
+  "kicker": "Light and electricity",
+  "description": "Five optical and electrical phenomena are arranged on one desk. Find each setup and select every law that applies.",
+  "learning_summary": "The study room reveals how light reflects, refracts, forms images, and separates into colors, while electrical energy powers the observations.",
+  "learning_points": [
+    "Light changes direction predictably at reflective and transparent boundaries.",
+    "Lenses redirect many rays together to form images with measurable size and position.",
+    "White light contains wavelengths that materials can bend by different amounts."
+  ],
+  "section": "electricity_and_optics",
+  "background": "study-room-watercolor.jpg",
+  "scene_label": "Interactive study room",
+  "scene_alt": "Watercolor study room with a lamp, mirror, pencil in water, magnifying glass, and prism",
+  "legend": "Find a light or electricity phenomenon",
+  "animated_object_ids": [],
+  "previous_level": "kitchen_01",
+  "next_level": "water_garden_01",
+  "formula_ids": [
+    "electric_power",
+    "energy_conservation",
+    "reflection_law",
+    "snell_law",
+    "refractive_index",
+    "thin_lens",
+    "magnification"
+  ],
+  "processes": [
+    {
+      "id": "electrical_energy",
+      "label": "Electrical energy conversion"
+    },
+    {
+      "id": "light_emission",
+      "label": "Light emission"
+    },
+    {
+      "id": "reflection",
+      "label": "Reflection"
+    },
+    {
+      "id": "refraction",
+      "label": "Refraction"
+    },
+    {
+      "id": "image_formation",
+      "label": "Image formation"
+    },
+    {
+      "id": "magnification_process",
+      "label": "Magnification"
+    },
+    {
+      "id": "dispersion",
+      "label": "Dispersion"
+    }
+  ],
+  "objects": [
+    {
+      "id": "desk_lamp",
+      "label": "Desk lamp",
+      "prompt": "The lamp converts electrical energy and illuminates the open book. Which processes and laws describe it?",
+      "hint": "Follow the energy from the electrical circuit to the light and heat produced by the bulb.",
+      "position": {
+        "x": 3,
+        "y": 10
+      },
+      "size": {
+        "width": 32,
+        "height": 58
+      },
+      "processes": [
+        "electrical_energy",
+        "light_emission"
+      ],
+      "formula_ids": [
+        "electric_power",
+        "energy_conservation"
+      ],
+      "explanation": "The lamp draws electrical power P = UI and converts electrical energy into light and thermal energy. The total energy remains conserved even though its form changes.",
+      "reasoning_steps": [
+        "Voltage drives current through the lamp's electrical components.",
+        "Electrical power measures how quickly the lamp receives energy.",
+        "That energy becomes visible light and heat rather than being destroyed."
+      ]
+    },
+    {
+      "id": "table_mirror",
+      "label": "Table mirror",
+      "prompt": "The upright mirror forms an image of the lamp. Which optical process and law apply?",
+      "hint": "Compare the angle at which a ray reaches the mirror with the angle at which it leaves.",
+      "position": {
+        "x": 38,
+        "y": 28
+      },
+      "size": {
+        "width": 17,
+        "height": 39
+      },
+      "processes": [
+        "reflection",
+        "image_formation"
+      ],
+      "formula_ids": [
+        "reflection_law"
+      ],
+      "explanation": "The mirror forms a virtual image by reflection. Every ray leaves the surface at the same angle at which it arrived, so θᵢ = θᵣ.",
+      "reasoning_steps": [
+        "Light from the object reaches the smooth mirror surface.",
+        "Each ray reflects with an angle equal to its incident angle, measured from the normal.",
+        "The reflected rays appear to originate behind the mirror, producing a virtual image."
+      ]
+    },
+    {
+      "id": "pencil_in_water",
+      "label": "Pencil in water",
+      "prompt": "The pencil appears bent where it enters the water. Which process and formulas explain the effect?",
+      "hint": "Light changes speed and direction when it crosses the boundary between air and water.",
+      "position": {
+        "x": 54,
+        "y": 40
+      },
+      "size": {
+        "width": 14,
+        "height": 30
+      },
+      "processes": [
+        "refraction"
+      ],
+      "formula_ids": [
+        "snell_law",
+        "refractive_index"
+      ],
+      "explanation": "Light from the submerged pencil changes speed and direction at the water-air boundary. Snell's law relates the two angles, while n = c/v describes the change in light speed.",
+      "reasoning_steps": [
+        "Light travels at different speeds in water and air.",
+        "Crossing the boundary changes the ray direction according to Snell's law.",
+        "The eye traces the refracted ray backward, so the submerged section appears displaced."
+      ]
+    },
+    {
+      "id": "magnifying_glass",
+      "label": "Magnifying glass",
+      "prompt": "The lens makes a shape in the notebook appear larger. Which processes and formulas describe this?",
+      "hint": "A converging lens refracts rays to form an enlarged image. Consider both image distance and image size.",
+      "position": {
+        "x": 55,
+        "y": 70
+      },
+      "size": {
+        "width": 28,
+        "height": 27
+      },
+      "processes": [
+        "refraction",
+        "image_formation",
+        "magnification_process"
+      ],
+      "formula_ids": [
+        "thin_lens",
+        "magnification"
+      ],
+      "explanation": "The convex lens refracts light to form a larger virtual image when the object is inside its focal length. The thin-lens equation locates the image and M = hᵢ/hₒ describes its enlargement.",
+      "reasoning_steps": [
+        "The curved lens surfaces refract incoming rays toward the optical axis.",
+        "With the object inside the focal length, emerging rays diverge but appear to meet behind the object.",
+        "Image distance and magnification describe where the virtual image appears and how large it looks."
+      ]
+    },
+    {
+      "id": "glass_prism",
+      "label": "Glass prism",
+      "prompt": "White light leaves the prism as a spectrum. Which optical processes and formulas apply?",
+      "hint": "The ray changes direction at each surface, and different wavelengths bend by different amounts.",
+      "position": {
+        "x": 69,
+        "y": 50
+      },
+      "size": {
+        "width": 14,
+        "height": 19
+      },
+      "processes": [
+        "refraction",
+        "dispersion"
+      ],
+      "formula_ids": [
+        "snell_law",
+        "refractive_index"
+      ],
+      "explanation": "Light refracts at both prism surfaces. Because the refractive index depends on wavelength, the colors bend by different amounts and separate into a spectrum.",
+      "reasoning_steps": [
+        "White light enters the prism and refracts at the first surface.",
+        "Different wavelengths experience slightly different refractive indices.",
+        "A second refraction increases the separation, revealing the visible spectrum."
+      ]
+    }
+  ]
+}

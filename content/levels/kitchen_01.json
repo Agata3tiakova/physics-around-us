@@ -1,0 +1,215 @@
+{
+  "id": "kitchen_01",
+  "number": 1,
+  "nav_title": "Kitchen",
+  "title": "Physics in the Kitchen",
+  "page_title": "Kitchen Investigation",
+  "kicker": "Observation",
+  "scene_label": "Interactive kitchen",
+  "scene_alt": "Watercolor kitchen with five observable physics phenomena",
+  "legend": "Find a physical phenomenon",
+  "animated_object_ids": [
+    "falling_box",
+    "jumping_cat"
+  ],
+  "next_level": "study_room_01",
+  "description": "Five physical phenomena are hidden in one kitchen. Find them and select every law that applies.",
+  "learning_summary": "A kitchen continually transforms energy: objects accelerate, electrical devices produce heat, and warm fluids move through convection and phase change.",
+  "learning_points": [
+    "Forces change motion, while gravity acts even after contact with a surface ends.",
+    "Heating can raise temperature, circulate a fluid, or produce a phase change.",
+    "Electrical energy does not disappear; appliances transform it into other forms."
+  ],
+  "section": "mechanics_and_heat",
+  "background": "kitchen-watercolor-v2.jpg",
+  "formula_ids": [
+    "newton_second_law",
+    "gravity_force",
+    "free_fall_velocity",
+    "projectile_motion",
+    "heat_quantity",
+    "phase_change_heat",
+    "electric_power",
+    "energy_conservation"
+  ],
+  "processes": [
+    {
+      "id": "accelerated_motion",
+      "label": "Accelerated motion"
+    },
+    {
+      "id": "free_fall",
+      "label": "Free fall"
+    },
+    {
+      "id": "projectile_motion",
+      "label": "Projectile motion"
+    },
+    {
+      "id": "heat_transfer",
+      "label": "Heat transfer"
+    },
+    {
+      "id": "convection_process",
+      "label": "Convection"
+    },
+    {
+      "id": "phase_change",
+      "label": "Vaporization"
+    },
+    {
+      "id": "electric_energy",
+      "label": "Electrical energy conversion"
+    }
+  ],
+  "objects": [
+    {
+      "id": "falling_box",
+      "label": "Falling box",
+      "prompt": "The box has lost its support and is moving downward. Which processes and laws describe this motion?",
+      "hint": "Consider what causes the motion, how the speed changes, and the velocity formula for constant acceleration.",
+      "position": {
+        "x": 21.5,
+        "y": 4.5
+      },
+      "size": {
+        "width": 8,
+        "height": 14
+      },
+      "finished_position": {
+        "x": 16.5,
+        "y": 78
+      },
+      "processes": [
+        "accelerated_motion",
+        "free_fall"
+      ],
+      "formula_ids": [
+        "newton_second_law",
+        "gravity_force",
+        "free_fall_velocity"
+      ],
+      "explanation": "After losing its support, the box falls freely with acceleration caused by gravity. The motion connects gravitational force, the second law of Newton, and the change in velocity over time.",
+      "reasoning_steps": [
+        "Once the shelf no longer supports the box, gravity is the dominant vertical force.",
+        "A nonzero net force produces downward acceleration, so the box's speed increases as it falls.",
+        "The force and motion equations describe the same event from complementary viewpoints."
+      ]
+    },
+    {
+      "id": "jumping_cat",
+      "label": "Jumping cat",
+      "prompt": "The cat pushed off the floor and is moving toward the counter. Which descriptions apply to its motion?",
+      "hint": "After leaving the floor, the cat follows a trajectory while gravity changes its vertical velocity.",
+      "position": {
+        "x": 74,
+        "y": 70
+      },
+      "size": {
+        "width": 18,
+        "height": 29
+      },
+      "finished_position": {
+        "x": 61.5,
+        "y": 29.5
+      },
+      "processes": [
+        "projectile_motion",
+        "accelerated_motion"
+      ],
+      "formula_ids": [
+        "projectile_motion",
+        "energy_conservation"
+      ],
+      "explanation": "While airborne, the cat follows a curved trajectory with vertical acceleration. Its motion can be described with the position equation and the conversion between kinetic and potential energy.",
+      "reasoning_steps": [
+        "The cat pushes against the floor to begin the jump, then loses contact with it.",
+        "Horizontal motion carries the cat forward while gravity changes its vertical velocity.",
+        "Kinetic energy is exchanged with gravitational potential energy during the rise and landing."
+      ]
+    },
+    {
+      "id": "heating_soup",
+      "label": "Heating soup",
+      "prompt": "The soup receives energy from the stove and circulates as it warms. What is happening?",
+      "hint": "Look for both energy transfer and the motion of warmer and cooler layers of liquid.",
+      "position": {
+        "x": 50,
+        "y": 35
+      },
+      "size": {
+        "width": 11,
+        "height": 15
+      },
+      "processes": [
+        "heat_transfer",
+        "convection_process"
+      ],
+      "formula_ids": [
+        "heat_quantity"
+      ],
+      "explanation": "The soup receives heat from the stove while convection currents form inside the liquid. The temperature change can be estimated with Q = cmΔT.",
+      "reasoning_steps": [
+        "The burner transfers thermal energy through the base of the pot.",
+        "Warmer, less-dense liquid rises while cooler liquid sinks, creating convection currents.",
+        "The required heat depends on the soup's mass, heat capacity, and temperature change."
+      ]
+    },
+    {
+      "id": "rising_steam",
+      "label": "Rising steam",
+      "prompt": "Steam forms above the pot and rises. Which processes can you observe?",
+      "hint": "Separate the liquid-to-gas phase change from the upward motion of the heated mixture.",
+      "position": {
+        "x": 53,
+        "y": 28
+      },
+      "size": {
+        "width": 7,
+        "height": 9
+      },
+      "processes": [
+        "phase_change",
+        "convection_process"
+      ],
+      "formula_ids": [
+        "phase_change_heat"
+      ],
+      "explanation": "Water receives energy for vaporization, while warm vapor and air rise through convection. The energy of the phase change is estimated with Q = Lm.",
+      "reasoning_steps": [
+        "Energetic molecules escape the liquid and become water vapor.",
+        "The phase change consumes latent heat rather than simply raising temperature.",
+        "Warm vapor and surrounding air rise because the heated mixture is less dense."
+      ]
+    },
+    {
+      "id": "electric_kettle",
+      "label": "Electric kettle",
+      "prompt": "The kettle is connected to electricity and heats water. Which transformations and formulas apply?",
+      "hint": "Follow the chain from electrical energy to appliance power, water heating, and the overall energy balance.",
+      "position": {
+        "x": 22,
+        "y": 28
+      },
+      "size": {
+        "width": 11,
+        "height": 24
+      },
+      "processes": [
+        "electric_energy",
+        "heat_transfer"
+      ],
+      "formula_ids": [
+        "electric_power",
+        "heat_quantity",
+        "energy_conservation"
+      ],
+      "explanation": "The kettle converts electrical energy into thermal energy. Its power is P = UI, water heating follows Q = cmΔT, and the complete process obeys conservation of energy.",
+      "reasoning_steps": [
+        "Current through the heating element transfers electrical energy to the appliance.",
+        "The element transfers thermal energy to the water, raising its temperature.",
+        "Input electrical energy becomes useful heat plus smaller losses to the kettle and surrounding air."
+      ]
+    }
+  ]
+}

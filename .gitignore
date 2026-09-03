@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local runtime data
+*.log
+*.db
+*.sqlite
+*.sqlite3
+qa-*.png
+
+# Local editor and agent settings
+.vscode/
+.idea/
+.agents/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini

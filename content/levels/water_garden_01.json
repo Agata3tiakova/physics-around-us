@@ -1,0 +1,207 @@
+{
+  "id": "water_garden_01",
+  "number": 3,
+  "nav_title": "Water Garden",
+  "title": "Water Physics in the Garden",
+  "page_title": "Garden Water Investigation",
+  "kicker": "Pressure, liquids, and waves",
+  "description": "Five water experiments are running in one garden. Find each phenomenon and select every law that applies.",
+  "learning_summary": "The water garden connects density, pressure, buoyancy, flowing fluids, and waves through visible changes in force, speed, and energy.",
+  "learning_points": [
+    "Floating and sinking depend on the balance between weight and buoyant force.",
+    "Pressure and speed change as water moves through different depths and cross-sections.",
+    "Waves transport energy across a surface without carrying the water itself across the pond."
+  ],
+  "section": "pressure_liquids_and_waves",
+  "background": "water-garden-watercolor.jpg",
+  "scene_label": "Interactive garden water laboratory",
+  "scene_alt": "Watercolor garden with a floating boat, submerged stone, bottle jets, hose stream, and circular ripples",
+  "legend": "Find a liquid or wave phenomenon",
+  "animated_object_ids": [],
+  "previous_level": "study_room_01",
+  "formula_ids": [
+    "gravity_force",
+    "density",
+    "hydrostatic_pressure",
+    "buoyant_force",
+    "continuity_equation",
+    "bernoulli_equation",
+    "wave_speed"
+  ],
+  "processes": [
+    {
+      "id": "buoyancy",
+      "label": "Buoyancy"
+    },
+    {
+      "id": "floating_equilibrium",
+      "label": "Floating equilibrium"
+    },
+    {
+      "id": "sinking",
+      "label": "Sinking"
+    },
+    {
+      "id": "density_comparison",
+      "label": "Density comparison"
+    },
+    {
+      "id": "hydrostatic_pressure_process",
+      "label": "Hydrostatic pressure"
+    },
+    {
+      "id": "accelerated_flow",
+      "label": "Accelerated fluid flow"
+    },
+    {
+      "id": "flow_conservation",
+      "label": "Flow-rate conservation"
+    },
+    {
+      "id": "surface_waves",
+      "label": "Surface waves"
+    }
+  ],
+  "objects": [
+    {
+      "id": "floating_boat",
+      "label": "Floating toy boat",
+      "prompt": "The toy boat stays at rest on the water surface. Which processes and force laws describe this state?",
+      "hint": "Compare the upward force from displaced water with the boat's downward weight.",
+      "position": {
+        "x": 7,
+        "y": 31
+      },
+      "size": {
+        "width": 23,
+        "height": 24
+      },
+      "processes": [
+        "buoyancy",
+        "floating_equilibrium"
+      ],
+      "formula_ids": [
+        "buoyant_force",
+        "gravity_force"
+      ],
+      "explanation": "The boat displaces water and experiences an upward buoyant force F_b = ρgV. While it floats at rest, that force balances its weight F_g = mg.",
+      "reasoning_steps": [
+        "The boat pushes aside a volume of water as it settles into the surface.",
+        "The displaced water produces an upward buoyant force.",
+        "At rest, buoyant force and weight are equal, so the net vertical force is zero."
+      ]
+    },
+    {
+      "id": "sunken_stone",
+      "label": "Stone at the bottom",
+      "prompt": "The stone has sunk and rests at the bottom of the tank. Which ideas explain why it did not float?",
+      "hint": "Compare the stone's average density with water and consider both gravity and buoyancy.",
+      "position": {
+        "x": 11,
+        "y": 61
+      },
+      "size": {
+        "width": 18,
+        "height": 17
+      },
+      "processes": [
+        "buoyancy",
+        "sinking",
+        "density_comparison"
+      ],
+      "formula_ids": [
+        "density",
+        "buoyant_force",
+        "gravity_force"
+      ],
+      "explanation": "The stone is denser than water. Although water exerts an upward buoyant force, the stone's weight is larger, so it sinks until the bottom supplies an additional support force.",
+      "reasoning_steps": [
+        "The stone displaces water and therefore receives an upward buoyant force.",
+        "Its weight is greater than that buoyant force because its average density exceeds water's density.",
+        "The remaining downward net force accelerates the stone until it reaches the bottom."
+      ]
+    },
+    {
+      "id": "bottle_jets",
+      "label": "Jets from the bottle",
+      "prompt": "Water leaves three holes at different depths, and the lower jet travels farther. Which processes and equations explain the pattern?",
+      "hint": "Pressure increases with depth, and pressure energy becomes kinetic energy as water exits each hole.",
+      "position": {
+        "x": 38,
+        "y": 8
+      },
+      "size": {
+        "width": 31,
+        "height": 58
+      },
+      "processes": [
+        "hydrostatic_pressure_process",
+        "accelerated_flow"
+      ],
+      "formula_ids": [
+        "hydrostatic_pressure",
+        "bernoulli_equation"
+      ],
+      "explanation": "Hydrostatic pressure p = ρgh grows with depth. At each opening, part of that pressure energy becomes kinetic energy, so the lowest jet leaves fastest and reaches farthest.",
+      "reasoning_steps": [
+        "Deeper water supports a taller column of liquid above it and therefore has greater pressure.",
+        "When an opening is made, pressure energy accelerates water outward.",
+        "The lowest opening has the greatest pressure difference and produces the fastest jet."
+      ]
+    },
+    {
+      "id": "hose_nozzle",
+      "label": "Narrow hose nozzle",
+      "prompt": "The hose narrows at the nozzle and sends a fast stream into the bucket. Which flow principles apply?",
+      "hint": "The same volume flow must pass through a smaller cross-section, changing both speed and pressure.",
+      "position": {
+        "x": 76,
+        "y": 22
+      },
+      "size": {
+        "width": 24,
+        "height": 43
+      },
+      "processes": [
+        "accelerated_flow",
+        "flow_conservation"
+      ],
+      "formula_ids": [
+        "continuity_equation",
+        "bernoulli_equation"
+      ],
+      "explanation": "The continuity equation A₁v₁ = A₂v₂ means water moves faster through the narrow nozzle. Bernoulli's equation relates that speed increase to pressure and height changes along the flow.",
+      "reasoning_steps": [
+        "The same amount of water per second must pass through the hose and nozzle.",
+        "A smaller cross-sectional area therefore requires a greater flow speed.",
+        "Bernoulli's equation tracks the exchange among pressure, kinetic, and gravitational energy."
+      ]
+    },
+    {
+      "id": "water_ripples",
+      "label": "Circular water ripples",
+      "prompt": "A falling droplet creates expanding circular ripples. Which process and formula describe the moving pattern?",
+      "hint": "The disturbance carries energy across the surface; relate its speed, wavelength, and frequency.",
+      "position": {
+        "x": 52,
+        "y": 70
+      },
+      "size": {
+        "width": 34,
+        "height": 27
+      },
+      "processes": [
+        "surface_waves"
+      ],
+      "formula_ids": [
+        "wave_speed"
+      ],
+      "explanation": "The droplet creates a disturbance that spreads across the water surface in circular wavefronts. Its propagation speed is related to wavelength and frequency by v = λf.",
+      "reasoning_steps": [
+        "The impact displaces water and creates a local oscillation.",
+        "Neighboring regions begin oscillating, allowing the disturbance and its energy to travel outward.",
+        "Wave speed depends on how far each crest is from the next and how frequently crests pass."
+      ]
+    }
+  ]
+}

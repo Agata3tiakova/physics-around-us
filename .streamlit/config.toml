@@ -1,0 +1,19 @@
+[client]
+toolbarMode = "minimal"
+showErrorDetails = "none"
+showErrorLinks = false
+
+[browser]
+gatherUsageStats = false
+
+[runner]
+fastReruns = true
+postScriptGC = true
+
+
+[theme]
+primaryColor = "#C58F78"
+backgroundColor = "#FBF6ED"
+secondaryBackgroundColor = "#E9EFE5"
+textColor = "#514842"
+font = "sans serif"

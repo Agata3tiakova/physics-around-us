@@ -1,0 +1,116 @@
+[
+  {
+    "id": "newton_second_law",
+    "name": "Newton second law",
+    "expression": "F = ma",
+    "meaning": "The net force on an object determines how strongly it accelerates; greater mass requires more force for the same acceleration."
+  },
+  {
+    "id": "gravity_force",
+    "name": "Gravitational force",
+    "expression": "F_g = mg",
+    "meaning": "Near Earth's surface, an object's weight equals its mass multiplied by gravitational acceleration."
+  },
+  {
+    "id": "free_fall_velocity",
+    "name": "Free-fall velocity",
+    "expression": "v = v₀ + gt",
+    "meaning": "During free fall, gravity changes vertical velocity by the same amount during every equal time interval."
+  },
+  {
+    "id": "projectile_motion",
+    "name": "Projectile motion",
+    "expression": "y = v₀t − gt²/2",
+    "meaning": "Vertical position combines the object's initial motion with the increasing downward effect of gravity."
+  },
+  {
+    "id": "heat_quantity",
+    "name": "Heat energy",
+    "expression": "Q = cmΔT",
+    "meaning": "The energy needed for a temperature change depends on the material, its mass, and the size of that change."
+  },
+  {
+    "id": "phase_change_heat",
+    "name": "Latent heat of vaporization",
+    "expression": "Q = Lm",
+    "meaning": "A phase change requires energy even while temperature remains approximately constant."
+  },
+  {
+    "id": "electric_power",
+    "name": "Electric power",
+    "expression": "P = UI",
+    "meaning": "Electrical power is the rate at which a device receives and transforms electrical energy."
+  },
+  {
+    "id": "energy_conservation",
+    "name": "Conservation of energy",
+    "expression": "E₁ = E₂",
+    "meaning": "Energy can move between objects or change form, but the total energy of an isolated system remains constant."
+  },
+  {
+    "id": "reflection_law",
+    "name": "Law of reflection",
+    "expression": "θᵢ = θᵣ",
+    "meaning": "A reflected ray leaves a surface at the same angle at which the incoming ray arrived."
+  },
+  {
+    "id": "snell_law",
+    "name": "Snell law",
+    "expression": "n₁ sin θ₁ = n₂ sin θ₂",
+    "meaning": "A light ray changes direction when it enters a medium with a different refractive index."
+  },
+  {
+    "id": "refractive_index",
+    "name": "Refractive index",
+    "expression": "n = c / v",
+    "meaning": "Refractive index compares light's speed in vacuum with its slower speed inside a material."
+  },
+  {
+    "id": "thin_lens",
+    "name": "Thin lens equation",
+    "expression": "1/f = 1/dₒ + 1/dᵢ",
+    "meaning": "A lens's focal length connects the position of an object with the position of the image it forms."
+  },
+  {
+    "id": "magnification",
+    "name": "Linear magnification",
+    "expression": "M = hᵢ / hₒ",
+    "meaning": "Magnification compares the image height with the original object's height."
+  },
+  {
+    "id": "density",
+    "name": "Density",
+    "expression": "ρ = m / V",
+    "meaning": "Density measures how much mass is packed into a given volume."
+  },
+  {
+    "id": "hydrostatic_pressure",
+    "name": "Hydrostatic pressure",
+    "expression": "p = ρgh",
+    "meaning": "Pressure in a stationary liquid increases with density, gravity, and depth below the surface."
+  },
+  {
+    "id": "buoyant_force",
+    "name": "Buoyant force",
+    "expression": "F_b = ρgV",
+    "meaning": "The buoyant force equals the weight of the fluid displaced by an immersed object."
+  },
+  {
+    "id": "continuity_equation",
+    "name": "Continuity equation",
+    "expression": "A₁v₁ = A₂v₂",
+    "meaning": "For steady incompressible flow, a narrower passage produces a greater fluid speed."
+  },
+  {
+    "id": "bernoulli_equation",
+    "name": "Bernoulli equation",
+    "expression": "p + ρv²/2 + ρgh = const",
+    "meaning": "Along a streamline, pressure, motion, and height exchange energy while their total remains constant."
+  },
+  {
+    "id": "wave_speed",
+    "name": "Wave speed",
+    "expression": "v = λf",
+    "meaning": "Wave speed equals the distance between wavefronts multiplied by how many pass each second."
+  }
+]
