@@ -2,6 +2,10 @@
 
 An interactive educational game for discovering physics in illustrated everyday scenes. Players inspect animated objects, identify every applicable physical process, connect observations to formulas, and review step-by-step explanations.
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://physics-around-us-agata3tiakova.streamlit.app/)
+
+**Live app:** [physics-around-us-agata3tiakova.streamlit.app](https://physics-around-us-agata3tiakova.streamlit.app/)
+
 ## Current Levels
 
 1. **Physics in the Kitchen** - mechanics, heat transfer, convection, phase changes, and electrical power.
