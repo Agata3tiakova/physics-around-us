@@ -119,23 +119,13 @@ hr { border-color: #cfc0b7; }
   --header-surface: rgba(246, 235, 189, .95);
 }
 .stApp:has(.level-theme--study_room_01) {
-  --paper: #b6d5ff;
+  --paper: #d5ebef;
   --peach: #df918d;
   --line: #b96d6b;
   --surface: #fff0ed;
   --surface-hover: #f7cfca;
   --metric-surface: #e8aaa6;
   --mint: #a87376;
-  --header-surface: rgba(182, 213, 255, .95);
-}
-.stApp:has(.level-theme--water_garden_01) {
-  --paper: #d5ebef;
-  --peach: #83bdc6;
-  --line: #619ba6;
-  --surface: #eefafd;
-  --surface-hover: #cdebf0;
-  --metric-surface: #abd5db;
-  --mint: #658f99;
   --header-surface: rgba(213, 235, 239, .95);
 }
 .stApp:has(.level-theme-marker) [data-testid="stMain"] { background: var(--paper); }

@@ -1,5 +1,6 @@
 import streamlit as st
 
+from game.level_loader import LEVEL_IDS
 from game.state import initialize_state, select_level
 from game.ui import apply_global_styles, show_startup_splash
 
@@ -17,8 +18,10 @@ st.set_page_config(
 apply_global_styles()
 initialize_state()
 requested_level = st.query_params.get("level")
-if requested_level in {"kitchen_01", "study_room_01", "water_garden_01"}:
+if requested_level in LEVEL_IDS:
     select_level(requested_level)
+elif st.session_state.current_level not in LEVEL_IDS:
+    select_level(LEVEL_IDS[0])
 show_startup_splash()
 
 open_level = st.query_params.get("view") == "level"

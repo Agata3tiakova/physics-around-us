@@ -19,7 +19,6 @@
   "legend": "Find a light or electricity phenomenon",
   "animated_object_ids": [],
   "previous_level": "kitchen_01",
-  "next_level": "water_garden_01",
   "formula_ids": [
     "electric_power",
     "energy_conservation",

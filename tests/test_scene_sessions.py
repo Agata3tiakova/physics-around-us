@@ -9,7 +9,7 @@ APP = Path(__file__).resolve().parents[1] / "app.py"
 
 class SceneSessionTests(unittest.TestCase):
     def test_levels_register_scene_in_each_runtime(self):
-        for level_id in ("kitchen_01", "study_room_01", "water_garden_01"):
+        for level_id in ("kitchen_01", "study_room_01"):
             with self.subTest(level=level_id):
                 app = AppTest.from_file(str(APP), default_timeout=30)
                 app.query_params = {"view": "level", "level": level_id}
@@ -17,6 +17,14 @@ class SceneSessionTests(unittest.TestCase):
                 self.assertEqual(len(app.exception), 0)
                 app.run()
                 self.assertEqual(len(app.exception), 0)
+
+    def test_removed_level_link_falls_back_to_kitchen(self):
+        app = AppTest.from_file(str(APP), default_timeout=30)
+        app.query_params = {"view": "level", "level": "water_garden_01"}
+        app.run()
+        self.assertEqual(len(app.exception), 0)
+        self.assertEqual(app.session_state.current_level, "kitchen_01")
+        self.assertFalse(any("Water Garden" in button.label for button in app.sidebar.button))
 
     def test_kitchen_play_and_hint(self):
         app = AppTest.from_file(str(APP), default_timeout=30)

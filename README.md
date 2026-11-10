@@ -10,7 +10,6 @@ An interactive educational game for discovering physics in illustrated everyday 
 
 1. **Physics in the Kitchen** - mechanics, heat transfer, convection, phase changes, and electrical power.
 2. **Study Room** - reflection, refraction, image formation, dispersion, and electrical energy.
-3. **Water Garden** - density, pressure, buoyancy, fluid flow, and surface waves.
 
 Each level includes five observable phenomena, multi-select answers, hints, scoring, replayable animations, and a notebook-style learning summary.
 

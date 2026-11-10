@@ -6,7 +6,7 @@ import streamlit as st
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 LEVELS_DIR = ROOT_DIR / "content" / "levels"
-LEVEL_IDS = ("kitchen_01", "study_room_01", "water_garden_01")
+LEVEL_IDS = ("kitchen_01", "study_room_01")
 
 
 @st.cache_data(show_spinner=False)
