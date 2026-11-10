@@ -7,12 +7,12 @@ from streamlit.components.v2 import component
 
 COMPONENT_DIR = Path(__file__).parent
 KITCHEN_SPRITE_PATHS = {
-    "box": COMPONENT_DIR / "box-v2.png",
-    "cat_sitting": COMPONENT_DIR / "cat-sitting-v3.png",
-    "cat_crouching": COMPONENT_DIR / "cat-crouching-v3.png",
-    "cat_jumping": COMPONENT_DIR / "cat-jumping-v3.png",
-    "kettle": COMPONENT_DIR / "kettle-v2.png",
-    "soup_pot": COMPONENT_DIR / "soup-pot-v2.png",
+    "cat_floor": COMPONENT_DIR / "cat-floor-lineart.png",
+    "cat_jumping": COMPONENT_DIR / "cat-jump-lineart.png",
+    "cat_table": COMPONENT_DIR / "cat-table-lineart.png",
+    "kettle": COMPONENT_DIR / "kettle-lineart.png",
+    "soup_pot": COMPONENT_DIR / "soup-pot-lineart.png",
+    "steam": COMPONENT_DIR / "steam-lineart.png",
 }
 
 

@@ -1,7 +1,6 @@
 function animationClassesFor(target) {
-  if (target === "all") return ["play-box", "play-cat"];
+  if (target === "all") return ["play-cat"];
   if (target === "jumping_cat") return ["play-cat"];
-  if (target === "falling_box") return ["play-box"];
   return [];
 }
 
@@ -24,8 +23,8 @@ export default function renderPhysicsScene(component) {
   const sprites = level.sprite_data_urls || {};
   [
     ["soup-pot", sprites.soup_pot, "Pot of hot soup"],
+    ["steam", sprites.steam, "Steam rising from the soup"],
     ["kettle", sprites.kettle, "Electric kettle"],
-    ["box", sprites.box, "Falling box"],
   ].forEach(([className, source, alt]) => {
     if (!source) return;
     const image = document.createElement("img");
@@ -37,9 +36,9 @@ export default function renderPhysicsScene(component) {
   });
 
   [
-    ["cat-sitting", sprites.cat_sitting, "Cat sitting on the floor"],
-    ["cat-crouching", sprites.cat_crouching, "Cat preparing to jump"],
+    ["cat-floor", sprites.cat_floor, "Cat sitting on the floor"],
     ["cat-jumping", sprites.cat_jumping, "Cat jumping"],
+    ["cat-table", sprites.cat_table, "Cat sitting on the counter"],
   ].forEach(([className, source, alt]) => {
     if (!source) return;
     const image = document.createElement("img");
@@ -82,7 +81,6 @@ export default function renderPhysicsScene(component) {
   const animationClasses = animationClassesFor(level.animation_target);
   const shouldReplay =
     animationClasses.length && replayToken !== "0" && replayToken !== lastReplayToken;
-  if (finishedObjectIds.has("falling_box")) scene.classList.add("box-finished");
   if (finishedObjectIds.has("jumping_cat")) scene.classList.add("cat-finished");
 
   if (!shouldReplay) {

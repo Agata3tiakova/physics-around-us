@@ -12,6 +12,12 @@
     "meaning": "Near Earth's surface, an object's weight equals its mass multiplied by gravitational acceleration."
   },
   {
+    "id": "potential_energy",
+    "name": "Gravitational potential energy",
+    "expression": "E_p = mgh",
+    "meaning": "An object's stored gravitational energy increases with its mass and height above a chosen reference level."
+  },
+  {
     "id": "free_fall_velocity",
     "name": "Free-fall velocity",
     "expression": "v = v₀ + gt",

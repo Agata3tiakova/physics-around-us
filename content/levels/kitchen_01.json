@@ -6,10 +6,9 @@
   "page_title": "Kitchen Investigation",
   "kicker": "Observation",
   "scene_label": "Interactive kitchen",
-  "scene_alt": "Watercolor kitchen with five observable physics phenomena",
+  "scene_alt": "Hand-drawn kitchen with five observable physics phenomena",
   "legend": "Find a physical phenomenon",
   "animated_object_ids": [
-    "falling_box",
     "jumping_cat"
   ],
   "next_level": "study_room_01",
@@ -21,11 +20,11 @@
     "Electrical energy does not disappear; appliances transform it into other forms."
   ],
   "section": "mechanics_and_heat",
-  "background": "kitchen-watercolor-v2.jpg",
+  "background": "kitchen-lineart.png",
   "formula_ids": [
     "newton_second_law",
     "gravity_force",
-    "free_fall_velocity",
+    "potential_energy",
     "projectile_motion",
     "heat_quantity",
     "phase_change_heat",
@@ -38,8 +37,8 @@
       "label": "Accelerated motion"
     },
     {
-      "id": "free_fall",
-      "label": "Free fall"
+      "id": "stored_gravitational_energy",
+      "label": "Stored gravitational energy"
     },
     {
       "id": "projectile_motion",
@@ -64,36 +63,30 @@
   ],
   "objects": [
     {
-      "id": "falling_box",
-      "label": "Falling box",
-      "prompt": "The box has lost its support and is moving downward. Which processes and laws describe this motion?",
-      "hint": "Consider what causes the motion, how the speed changes, and the velocity formula for constant acceleration.",
+      "id": "book_on_shelf",
+      "label": "Book on the high shelf",
+      "prompt": "The book rests high above the floor. Which force and stored-energy idea describe it?",
+      "hint": "Its weight depends on mass, while its stored gravitational energy also depends on height.",
       "position": {
-        "x": 21.5,
-        "y": 4.5
+        "x": 27,
+        "y": 2
       },
       "size": {
-        "width": 8,
-        "height": 14
-      },
-      "finished_position": {
-        "x": 16.5,
-        "y": 78
+        "width": 10,
+        "height": 18
       },
       "processes": [
-        "accelerated_motion",
-        "free_fall"
+        "stored_gravitational_energy"
       ],
       "formula_ids": [
-        "newton_second_law",
         "gravity_force",
-        "free_fall_velocity"
+        "potential_energy"
       ],
-      "explanation": "After losing its support, the box falls freely with acceleration caused by gravity. The motion connects gravitational force, the second law of Newton, and the change in velocity over time.",
+      "explanation": "The shelf supports the book against its weight F_g = mg. Because the book is elevated, it also stores gravitational potential energy E_p = mgh.",
       "reasoning_steps": [
-        "Once the shelf no longer supports the box, gravity is the dominant vertical force.",
-        "A nonzero net force produces downward acceleration, so the box's speed increases as it falls.",
-        "The force and motion equations describe the same event from complementary viewpoints."
+        "Gravity pulls the book downward with a force determined by its mass.",
+        "The shelf supplies an upward support force, so the resting book has no vertical acceleration.",
+        "Its height above the floor gives it stored gravitational potential energy."
       ]
     },
     {
@@ -102,16 +95,16 @@
       "prompt": "The cat pushed off the floor and is moving toward the counter. Which descriptions apply to its motion?",
       "hint": "After leaving the floor, the cat follows a trajectory while gravity changes its vertical velocity.",
       "position": {
-        "x": 74,
-        "y": 70
+        "x": 36.5,
+        "y": 77.5
       },
       "size": {
-        "width": 18,
-        "height": 29
+        "width": 8,
+        "height": 18
       },
       "finished_position": {
-        "x": 61.5,
-        "y": 29.5
+        "x": 51,
+        "y": 35
       },
       "processes": [
         "projectile_motion",
@@ -134,12 +127,12 @@
       "prompt": "The soup receives energy from the stove and circulates as it warms. What is happening?",
       "hint": "Look for both energy transfer and the motion of warmer and cooler layers of liquid.",
       "position": {
-        "x": 50,
-        "y": 35
+        "x": 21.5,
+        "y": 39
       },
       "size": {
-        "width": 11,
-        "height": 15
+        "width": 8,
+        "height": 10
       },
       "processes": [
         "heat_transfer",
@@ -161,12 +154,12 @@
       "prompt": "Steam forms above the pot and rises. Which processes can you observe?",
       "hint": "Separate the liquid-to-gas phase change from the upward motion of the heated mixture.",
       "position": {
-        "x": 53,
-        "y": 28
+        "x": 22,
+        "y": 34.5
       },
       "size": {
-        "width": 7,
-        "height": 9
+        "width": 6,
+        "height": 7
       },
       "processes": [
         "phase_change",
@@ -188,12 +181,12 @@
       "prompt": "The kettle is connected to electricity and heats water. Which transformations and formulas apply?",
       "hint": "Follow the chain from electrical energy to appliance power, water heating, and the overall energy balance.",
       "position": {
-        "x": 22,
-        "y": 28
+        "x": 70,
+        "y": 30
       },
       "size": {
         "width": 11,
-        "height": 24
+        "height": 27
       },
       "processes": [
         "electric_energy",
