@@ -7,6 +7,7 @@ from streamlit.components.v2 import component
 
 COMPONENT_DIR = Path(__file__).parent
 KITCHEN_SPRITE_PATHS = {
+    "box": COMPONENT_DIR / "box-lineart.png",
     "cat_floor": COMPONENT_DIR / "cat-floor-lineart.png",
     "cat_jumping": COMPONENT_DIR / "cat-jump-lineart.png",
     "cat_table": COMPONENT_DIR / "cat-table-lineart.png",
@@ -27,14 +28,6 @@ def _asset_data_url(path_value: str, modified_ns: int) -> str:
         ".webp": "image/webp",
     }.get(path.suffix.lower(), "image/png")
     return f"data:{mime_type};base64,{encoded}"
-
-
-_scene_component = component(
-    "physics_scene",
-    html='<main id="scene" aria-label="Interactive physics scene"></main>',
-    css=(COMPONENT_DIR / "scene.css").read_text(encoding="utf-8"),
-    js=(COMPONENT_DIR / "scene.js").read_text(encoding="utf-8"),
-)
 
 
 def physics_scene(
@@ -62,7 +55,14 @@ def physics_scene(
         name: _asset_data_url(str(path), path.stat().st_mtime_ns)
         for name, path in sprite_paths.items()
     }
-    result = _scene_component(
+    # Register against the active runtime, including after a server restart.
+    scene_component = component(
+        "physics_scene",
+        html='<main id="scene" aria-label="Interactive physics scene"></main>',
+        css=(COMPONENT_DIR / "scene.css").read_text(encoding="utf-8"),
+        js=(COMPONENT_DIR / "scene.js").read_text(encoding="utf-8"),
+    )
+    result = scene_component(
         data=component_level,
         key=key,
         height="content",

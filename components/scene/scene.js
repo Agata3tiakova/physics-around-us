@@ -1,5 +1,6 @@
 function animationClassesFor(target) {
-  if (target === "all") return ["play-cat"];
+  if (target === "all") return ["play-cat", "play-box"];
+  if (target === "falling_box") return ["play-box"];
   if (target === "jumping_cat") return ["play-cat"];
   return [];
 }
@@ -11,6 +12,7 @@ export default function renderPhysicsScene(component) {
   if (!scene) return;
   scene.innerHTML = "";
   scene.className = "";
+  if (level.id === "kitchen_01") scene.classList.add("kitchen-scene");
   scene.setAttribute("aria-label", level.scene_label || "Interactive physics scene");
 
   const background = document.createElement("img");
@@ -22,6 +24,7 @@ export default function renderPhysicsScene(component) {
 
   const sprites = level.sprite_data_urls || {};
   [
+    ["box", sprites.box, "Box falling from the shelf"],
     ["soup-pot", sprites.soup_pot, "Pot of hot soup"],
     ["steam", sprites.steam, "Steam rising from the soup"],
     ["kettle", sprites.kettle, "Electric kettle"],
@@ -82,16 +85,16 @@ export default function renderPhysicsScene(component) {
   const shouldReplay =
     animationClasses.length && replayToken !== "0" && replayToken !== lastReplayToken;
   if (finishedObjectIds.has("jumping_cat")) scene.classList.add("cat-finished");
+  if (finishedObjectIds.has("falling_box")) scene.classList.add("box-finished");
 
-  if (!shouldReplay) {
-    (level.objects || []).forEach((object) => {
+  (level.objects || []).forEach((object) => {
+      if (shouldReplay && (level.animation_target === "all" || level.animation_target === object.id)) return;
       if (!finishedObjectIds.has(object.id) || !object.finished_position) return;
       const button = scene.querySelector(`.hotspot.${object.id}`);
       if (!button) return;
       button.style.left = `${object.finished_position.x}%`;
       button.style.top = `${object.finished_position.y}%`;
-    });
-  }
+  });
 
   if (shouldReplay) {
     scene.classList.add(...animationClasses);

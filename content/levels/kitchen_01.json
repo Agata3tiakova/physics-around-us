@@ -9,6 +9,7 @@
   "scene_alt": "Hand-drawn kitchen with five observable physics phenomena",
   "legend": "Find a physical phenomenon",
   "animated_object_ids": [
+    "falling_box",
     "jumping_cat"
   ],
   "next_level": "study_room_01",
@@ -24,7 +25,7 @@
   "formula_ids": [
     "newton_second_law",
     "gravity_force",
-    "potential_energy",
+    "free_fall_velocity",
     "projectile_motion",
     "heat_quantity",
     "phase_change_heat",
@@ -37,8 +38,8 @@
       "label": "Accelerated motion"
     },
     {
-      "id": "stored_gravitational_energy",
-      "label": "Stored gravitational energy"
+      "id": "free_fall",
+      "label": "Free fall"
     },
     {
       "id": "projectile_motion",
@@ -63,30 +64,33 @@
   ],
   "objects": [
     {
-      "id": "book_on_shelf",
-      "label": "Book on the high shelf",
-      "prompt": "The book rests high above the floor. Which force and stored-energy idea describe it?",
-      "hint": "Its weight depends on mass, while its stored gravitational energy also depends on height.",
+      "id": "falling_box",
+      "label": "Falling box",
+      "prompt": "The box loses its support and falls from the shelf. Which processes and formulas describe its motion?",
+      "hint": "Ignore air resistance. Think about the force causing acceleration and how vertical velocity changes during a fall.",
       "position": {
-        "x": 27,
+        "x": 37.5,
         "y": 2
       },
       "size": {
-        "width": 10,
-        "height": 18
+        "width": 9,
+        "height": 12
       },
+      "finished_position": { "x": 31.7, "y": 80.6 },
       "processes": [
-        "stored_gravitational_energy"
+        "free_fall",
+        "accelerated_motion"
       ],
       "formula_ids": [
         "gravity_force",
-        "potential_energy"
+        "newton_second_law",
+        "free_fall_velocity"
       ],
-      "explanation": "The shelf supports the book against its weight F_g = mg. Because the book is elevated, it also stores gravitational potential energy E_p = mgh.",
+      "explanation": "Once support is lost, gravity accelerates the box downward. Neglecting air resistance, its weight F_g = mg is the net force in F = ma. Taking downward as positive, its vertical velocity follows v = v0 + gt until impact.",
       "reasoning_steps": [
-        "Gravity pulls the book downward with a force determined by its mass.",
-        "The shelf supplies an upward support force, so the resting book has no vertical acceleration.",
-        "Its height above the floor gives it stored gravitational potential energy."
+        "After the box leaves the shelf, the shelf no longer provides an upward support force.",
+        "Gravity is the dominant force during the fall, producing downward acceleration g.",
+        "The vertical speed increases until the floor stops the box; the free-fall model ends at impact."
       ]
     },
     {
