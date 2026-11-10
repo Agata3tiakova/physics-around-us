@@ -59,65 +59,60 @@ st.metric("Best score for this object", f"{st.session_state.object_scores.get(re
 hint_status = "used" if result["hint_used"] else "not used"
 st.caption(f"Attempt: {result['attempts']} · Hint: {hint_status}")
 st.markdown(f"## {result['object_label']}")
-st.write(result["explanation"])
 
-reasoning_steps = result.get("reasoning_steps", [])
-if reasoning_steps:
-    reasoning_items = "".join(
-        f"<li><span>{index}</span><p>{escape(step)}</p></li>"
-        for index, step in enumerate(reasoning_steps, start=1)
-    )
-    st.markdown(
-        '<section class="reasoning-note" aria-labelledby="reasoning-title">'
-        '<div class="reasoning-note__label">Observation notes</div>'
-        '<h2 id="reasoning-title">Why this happens</h2>'
-        f'<ol>{reasoning_items}</ol>'
-        '</section>',
-        unsafe_allow_html=True,
-    )
-
-formula_cards = []
-for formula_id in result["correct_formula_ids"]:
-    formula = formula_data_by_id.get(formula_id)
-    if not formula:
-        continue
-    formula_cards.append(
-        '<article class="formula-note">'
-        f'<div class="formula-note__name">{escape(formula["name"])}</div>'
-        f'<div class="formula-note__expression">{escape(formula["expression"])}</div>'
-        f'<p>{escape(formula.get("meaning", ""))}</p>'
-        '</article>'
-    )
-if formula_cards:
-    st.markdown("## Formula Notes")
-    st.markdown(
-        f'<div class="formula-note-grid">{"".join(formula_cards)}</div>',
-        unsafe_allow_html=True,
-    )
-
-st.markdown("## Answer Details")
 status_columns = st.columns(2)
-with status_columns[0]:
-    st.markdown("### Processes")
-    if result["process_correct"]:
-        st.success("Complete set")
-    else:
-        st.warning("Needs revision")
-    st.caption("Selected: " + labels(result["selected_process_ids"], process_by_id))
-with status_columns[1]:
-    st.markdown("### Formulas")
-    if result["formula_correct"]:
-        st.success("Complete set")
-    else:
-        st.warning("Needs revision")
-    st.caption("Selected: " + labels(result["selected_formula_ids"], formula_by_id))
+for column, title, is_correct in (
+    (status_columns[0], "Processes", result["process_correct"]),
+    (status_columns[1], "Formulas", result["formula_correct"]),
+):
+    with column:
+        st.markdown(f"### {title}")
+        if is_correct:
+            st.success("Complete set")
+        else:
+            st.warning("Needs revision")
 
-if not result["is_fully_correct"]:
-    with st.expander("Show complete explanation"):
-        st.write("Correct processes: " + labels(result["correct_process_ids"], process_by_id))
-        st.write("Correct formulas: " + labels(result["correct_formula_ids"], formula_by_id))
-        if result["extra_process_ids"] or result["extra_formula_ids"]:
-            st.caption("Your answer included extra options; remove them as well.")
+with st.expander("Show complete explanation"):
+    st.write("Correct processes: " + labels(result["correct_process_ids"], process_by_id))
+    st.write("Correct formulas: " + labels(result["correct_formula_ids"], formula_by_id))
+    if result["extra_process_ids"] or result["extra_formula_ids"]:
+        st.caption("Your answer included extra options; remove them as well.")
+
+    st.write(result["explanation"])
+
+    reasoning_steps = result.get("reasoning_steps", [])
+    if reasoning_steps:
+        reasoning_items = "".join(
+            f"<li><span>{index}</span><p>{escape(step)}</p></li>"
+            for index, step in enumerate(reasoning_steps, start=1)
+        )
+        st.markdown(
+            '<section class="reasoning-note" aria-labelledby="reasoning-title">'
+            '<div class="reasoning-note__label">Observation notes</div>'
+            '<h2 id="reasoning-title">Why this happens</h2>'
+            f'<ol>{reasoning_items}</ol>'
+            '</section>',
+            unsafe_allow_html=True,
+        )
+
+    formula_cards = []
+    for formula_id in result["correct_formula_ids"]:
+        formula = formula_data_by_id.get(formula_id)
+        if not formula:
+            continue
+        formula_cards.append(
+            '<article class="formula-note">'
+            f'<div class="formula-note__name">{escape(formula["name"])}</div>'
+            f'<div class="formula-note__expression">{escape(formula["expression"])}</div>'
+            f'<p>{escape(formula.get("meaning", ""))}</p>'
+            '</article>'
+        )
+    if formula_cards:
+        st.markdown("## Formula Notes")
+        st.markdown(
+            f'<div class="formula-note-grid">{"".join(formula_cards)}</div>',
+            unsafe_allow_html=True,
+        )
 
 level_complete = len(st.session_state.found_objects) == len(level["objects"])
 if level_complete:

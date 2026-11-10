@@ -9,6 +9,7 @@
   --surface-hover: #ffd7bf;
   --metric-surface: #efb294;
   --header-surface: rgba(246, 215, 194, .95);
+  --notebook-margin: rgba(206, 112, 105, .46);
   --display: "Segoe Print", "Bradley Hand ITC", "Bradley Hand", "Comic Sans MS", cursive;
   --body: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   --ui: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
@@ -18,7 +19,7 @@
 .stApp { background: var(--paper); color: var(--ink); font-family: var(--body); }
 [data-testid="stHeader"] { background: var(--header-surface); }
 #MainMenu,
-[data-testid="stToolbar"],
+[data-testid="stToolbarActions"],
 [data-testid="stAppDeployButton"],
 [data-testid="stStatusWidget"],
 [data-testid="stSkillsNudge"],
@@ -120,13 +121,24 @@ hr { border-color: #cfc0b7; }
 }
 .stApp:has(.level-theme--study_room_01) {
   --paper: #d5ebef;
-  --peach: #df918d;
-  --line: #b96d6b;
-  --surface: #fff0ed;
-  --surface-hover: #f7cfca;
-  --metric-surface: #e8aaa6;
-  --mint: #a87376;
+  --peach: #83bdc6;
+  --line: #619ba6;
+  --surface: #eefafd;
+  --surface-hover: #cdebf0;
+  --metric-surface: #abd5db;
+  --mint: #658f99;
   --header-surface: rgba(213, 235, 239, .95);
+  --notebook-margin: rgba(97, 155, 166, .46);
+}
+.stApp:has(.level-theme--study_room_01) :is(.stButton, .stFormSubmitButton) > button:hover,
+.stApp:has(.level-theme--study_room_01) :is(.stButton, .stFormSubmitButton) > button[kind="primary"] {
+  border-color: var(--line);
+  background: var(--peach);
+  color: #273f45;
+}
+.stApp:has(.level-theme--study_room_01) :is(.learning-focus__label, .reasoning-note__label, .reasoning-note li > span, .formula-note__name) {
+  color: #365f69;
+  border-color: var(--line);
 }
 .stApp:has(.level-theme-marker) [data-testid="stMain"] { background: var(--paper); }
 .stApp:has(.level-theme-marker) [data-testid="stProgress"] > div > div > div { background: var(--mint); }
@@ -146,7 +158,7 @@ hr { border-color: #cfc0b7; }
   border-radius: 3px 5px 4px 2px;
   background-color: #fff9df;
   background-image:
-    linear-gradient(90deg, transparent 0 2.75rem, rgba(206, 112, 105, .46) 2.75rem 2.82rem, transparent 2.82rem),
+    linear-gradient(90deg, transparent 0 2.75rem, var(--notebook-margin) 2.75rem 2.82rem, transparent 2.82rem),
     repeating-linear-gradient(to bottom, transparent 0 1.68rem, rgba(116, 166, 181, .22) 1.68rem 1.75rem);
   box-shadow: 4px 5px 0 rgba(113, 89, 77, .1), 0 10px 22px rgba(99, 76, 60, .08);
   transform: rotate(-.12deg);
@@ -338,15 +350,18 @@ hr { border-color: #cfc0b7; }
   font-size: 1.05rem;
   font-weight: 600;
 }
-.home-hero h1 {
-  margin: 0 0 .45rem !important;
+.home-hero h1,
+.home-topics > h2 {
   color: #fff8ef !important;
   font-family: var(--hand) !important;
-  font-size: 5.45rem !important;
   line-height: 1.04 !important;
   letter-spacing: 0;
-  text-shadow: 5px 6px 0 #d8aaa0;
   transform: rotate(-1deg);
+}
+.home-hero h1 {
+  margin: 0 0 .45rem !important;
+  font-size: 5.45rem !important;
+  text-shadow: 5px 6px 0 #d8aaa0;
 }
 .home-hero__copy > p:last-child {
   max-width: 850px;
@@ -359,13 +374,9 @@ hr { border-color: #cfc0b7; }
 .home-topics { margin-top: 3.5rem; }
 .home-topics > h2 {
   margin: 0 0 .25rem !important;
-  color: #fff8ef !important;
-  font-family: var(--hand) !important;
   font-size: 3rem !important;
-  font-weight: 700 !important;
   text-align: center;
   text-shadow: 3px 4px 0 #d8aaa0;
-  transform: rotate(-1deg);
 }
 .topic-cloud-grid {
   display: grid;
@@ -385,11 +396,11 @@ hr { border-color: #cfc0b7; }
   left: 50%;
   top: 50%;
   z-index: -1;
-  width: 155%;
+  width: 100%;
   max-width: none;
   height: auto;
   pointer-events: none;
-  transform: translate(-50%, -45%);
+  transform: translate(-50%, -50%);
   object-fit: contain;
 }
 .topic-cloud__content {
@@ -402,30 +413,23 @@ hr { border-color: #cfc0b7; }
   min-height: 250px;
   padding: 0;
   text-align: center;
-  transform: translateY(-30px);
 }
 .topic-cloud__content img {
+  position: absolute;
+  bottom: calc(50% + .75rem);
   display: block;
   width: 94px;
   height: 88px;
   object-fit: contain;
-  transform: translateY(-3px);
 }
 .topic-cloud__copy {
   width: min(82%, 220px);
-  margin-top: -.15rem;
 }
 .topic-cloud__copy h3 {
   margin: 0 0 .1rem !important;
   color: #59483f !important;
   font-size: 1rem !important;
   line-height: 1.2 !important;
-}
-.topic-cloud__copy p {
-  margin: 0;
-  color: #514940 !important;
-  font-size: .76rem;
-  line-height: 1.35;
 }
 .topic-cloud--thermodynamics .topic-cloud__content img { width: 100px; }
 .topic-cloud--electricity .topic-cloud__content img { width: 103px; }
@@ -434,7 +438,6 @@ hr { border-color: #cfc0b7; }
 .topic-cloud--thermodynamics { transform: translateY(13px) rotate(1deg); }
 .topic-cloud--electricity { transform: translateY(-4px) rotate(-.7deg); }
 .topic-cloud--optics { transform: translateY(12px) rotate(1.2deg); }
-.topic-cloud.is-locked .topic-cloud__background { opacity: .94; }
 .home-observation-note {
   position: relative;
   margin: 3.25rem .35rem 1.25rem;
@@ -566,7 +569,7 @@ hr { border-color: #cfc0b7; }
     margin-left: 0;
     padding: .8rem .8rem 1rem 3.25rem;
     background-image:
-      linear-gradient(90deg, transparent 0 2.25rem, rgba(206, 112, 105, .46) 2.25rem 2.32rem, transparent 2.32rem),
+      linear-gradient(90deg, transparent 0 2.25rem, var(--notebook-margin) 2.25rem 2.32rem, transparent 2.32rem),
       repeating-linear-gradient(to bottom, transparent 0 1.68rem, rgba(116, 166, 181, .22) 1.68rem 1.75rem);
     transform: none;
   }
@@ -583,13 +586,10 @@ hr { border-color: #cfc0b7; }
   .home-topics { margin-top: 2.5rem; }
   .topic-cloud-grid { gap: .45rem; margin-top: 2rem; }
   .topic-cloud { min-height: 205px; }
-  .topic-cloud__background { width: 170%; }
   .topic-cloud__content { min-height: 205px; }
-  .topic-cloud__content { transform: translateY(-24px); }
   .topic-cloud__content img { width: 72px; height: 64px; }
   .topic-cloud__copy { width: 88%; }
   .topic-cloud__copy h3 { font-size: .82rem !important; }
-  .topic-cloud__copy p { font-size: .66rem; line-height: 1.3; }
   .topic-cloud--thermodynamics .topic-cloud__content img { width: 78px; }
   .topic-cloud--electricity .topic-cloud__content img { width: 81px; }
   .topic-cloud--optics .topic-cloud__content img { width: 88px; }

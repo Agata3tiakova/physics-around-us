@@ -16,7 +16,7 @@
   "background": "study-room-lineart.png",
   "scene_label": "Interactive study room",
   "scene_alt": "Hand-drawn study room with a desk lamp, mirror, paintbrush in water, magnifying glass, and prism",
-  "legend": "Find a light or electricity phenomenon",
+  "legend": "Find a physical phenomenon",
   "animated_object_ids": [],
   "previous_level": "kitchen_01",
   "formula_ids": [

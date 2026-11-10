@@ -26,47 +26,24 @@ with st.sidebar:
         st.rerun()
 
 sections = [
-    (
-        "Mechanics",
-        "Track how forces change motion and how energy moves between objects.",
-        "topic-mechanics.png",
-        True,
-    ),
-    (
-        "Thermodynamics",
-        "Follow heat as it warms matter, flows, and changes its state.",
-        "topic-thermodynamics-solid.png",
-        True,
-    ),
-    (
-        "Electricity",
-        "Connect current and voltage to power and energy transformations.",
-        "topic-electricity.png",
-        True,
-    ),
-    (
-        "Optics",
-        "Trace light to explain reflection, refraction, and image formation.",
-        "topic-optics-solid.png",
-        True,
-    ),
+    ("Mechanics", "topic-mechanics.png"),
+    ("Thermodynamics", "topic-thermodynamics-solid.png"),
+    ("Electricity", "topic-electricity.png"),
+    ("Optics", "topic-optics-solid.png"),
 ]
 cloud_uri = ui_asset_data_uri("topic-cloud.png")
 
 topic_clouds = []
-for title, description, artwork, available in sections:
-    status = "Available" if available else "Coming soon"
-    status_class = "is-available" if available else "is-locked"
+for title, artwork in sections:
     image_uri = ui_asset_data_uri(artwork)
     topic_clouds.append(
         dedent(f"""
-        <article class="topic-cloud topic-cloud--{title.lower()} {status_class}" aria-label="{title}: {description}. {status}.">
+        <article class="topic-cloud topic-cloud--{title.lower()}">
             <img class="topic-cloud__background" src="{cloud_uri}" alt="" />
             <div class="topic-cloud__content">
                 <img src="{image_uri}" alt="" />
                 <div class="topic-cloud__copy">
                     <h3>{title}</h3>
-                    <p>{description}</p>
                 </div>
             </div>
         </article>
