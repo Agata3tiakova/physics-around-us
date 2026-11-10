@@ -13,6 +13,7 @@ export default function renderPhysicsScene(component) {
   scene.innerHTML = "";
   scene.className = "";
   if (level.id === "kitchen_01") scene.classList.add("kitchen-scene");
+  if (level.id === "study_room_01") scene.classList.add("study-scene");
   scene.setAttribute("aria-label", level.scene_label || "Interactive physics scene");
 
   const background = document.createElement("img");

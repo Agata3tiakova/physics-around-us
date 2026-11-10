@@ -119,14 +119,14 @@ hr { border-color: #cfc0b7; }
   --header-surface: rgba(246, 235, 189, .95);
 }
 .stApp:has(.level-theme--study_room_01) {
-  --paper: #f3d5d5;
+  --paper: #b6d5ff;
   --peach: #df918d;
   --line: #b96d6b;
   --surface: #fff0ed;
   --surface-hover: #f7cfca;
   --metric-surface: #e8aaa6;
   --mint: #a87376;
-  --header-surface: rgba(243, 213, 213, .95);
+  --header-surface: rgba(182, 213, 255, .95);
 }
 .stApp:has(.level-theme--water_garden_01) {
   --paper: #d5ebef;

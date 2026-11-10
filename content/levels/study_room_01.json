@@ -13,9 +13,9 @@
     "White light contains wavelengths that materials can bend by different amounts."
   ],
   "section": "electricity_and_optics",
-  "background": "study-room-watercolor.jpg",
+  "background": "study-room-lineart.png",
   "scene_label": "Interactive study room",
-  "scene_alt": "Watercolor study room with a lamp, mirror, pencil in water, magnifying glass, and prism",
+  "scene_alt": "Hand-drawn study room with a desk lamp, mirror, paintbrush in water, magnifying glass, and prism",
   "legend": "Find a light or electricity phenomenon",
   "animated_object_ids": [],
   "previous_level": "kitchen_01",
@@ -66,12 +66,12 @@
       "prompt": "The lamp converts electrical energy and illuminates the open book. Which processes and laws describe it?",
       "hint": "Follow the energy from the electrical circuit to the light and heat produced by the bulb.",
       "position": {
-        "x": 3,
-        "y": 10
+        "x": 68,
+        "y": 41
       },
       "size": {
-        "width": 32,
-        "height": 58
+        "width": 20,
+        "height": 44
       },
       "processes": [
         "electrical_energy",
@@ -94,12 +94,12 @@
       "prompt": "The upright mirror forms an image of the lamp. Which optical process and law apply?",
       "hint": "Compare the angle at which a ray reaches the mirror with the angle at which it leaves.",
       "position": {
-        "x": 38,
-        "y": 28
+        "x": 61,
+        "y": 36
       },
       "size": {
-        "width": 17,
-        "height": 39
+        "width": 13,
+        "height": 32
       },
       "processes": [
         "reflection",
@@ -117,16 +117,16 @@
     },
     {
       "id": "pencil_in_water",
-      "label": "Pencil in water",
-      "prompt": "The pencil appears bent where it enters the water. Which process and formulas explain the effect?",
+      "label": "Paintbrush in water",
+      "prompt": "The paintbrush appears bent where it enters the water. Which process and formulas explain the effect?",
       "hint": "Light changes speed and direction when it crosses the boundary between air and water.",
       "position": {
-        "x": 54,
-        "y": 40
+        "x": 28,
+        "y": 46
       },
       "size": {
-        "width": 14,
-        "height": 30
+        "width": 8,
+        "height": 25
       },
       "processes": [
         "refraction"
@@ -135,7 +135,7 @@
         "snell_law",
         "refractive_index"
       ],
-      "explanation": "Light from the submerged pencil changes speed and direction at the water-air boundary. Snell's law relates the two angles, while n = c/v describes the change in light speed.",
+      "explanation": "Light from the submerged paintbrush changes speed and direction at the water-air boundary. Snell's law relates the two angles, while n = c/v describes the change in light speed.",
       "reasoning_steps": [
         "Light travels at different speeds in water and air.",
         "Crossing the boundary changes the ray direction according to Snell's law.",
@@ -145,15 +145,15 @@
     {
       "id": "magnifying_glass",
       "label": "Magnifying glass",
-      "prompt": "The lens makes a shape in the notebook appear larger. Which processes and formulas describe this?",
+      "prompt": "The lens makes a star on the poster appear larger. Which processes and formulas describe this?",
       "hint": "A converging lens refracts rays to form an enlarged image. Consider both image distance and image size.",
       "position": {
-        "x": 55,
-        "y": 70
+        "x": 47,
+        "y": 38
       },
       "size": {
-        "width": 28,
-        "height": 27
+        "width": 9,
+        "height": 18
       },
       "processes": [
         "refraction",
@@ -177,12 +177,12 @@
       "prompt": "White light leaves the prism as a spectrum. Which optical processes and formulas apply?",
       "hint": "The ray changes direction at each surface, and different wavelengths bend by different amounts.",
       "position": {
-        "x": 69,
-        "y": 50
+        "x": 13,
+        "y": 69
       },
       "size": {
-        "width": 14,
-        "height": 19
+        "width": 10,
+        "height": 16
       },
       "processes": [
         "refraction",
