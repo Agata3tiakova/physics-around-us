@@ -76,7 +76,7 @@
         "width": 9,
         "height": 12
       },
-      "finished_position": { "x": 31.7, "y": 80.6 },
+      "finished_position": { "x": 37.5, "y": 32 },
       "processes": [
         "free_fall",
         "accelerated_motion"
@@ -90,7 +90,7 @@
       "reasoning_steps": [
         "After the box leaves the shelf, the shelf no longer provides an upward support force.",
         "Gravity is the dominant force during the fall, producing downward acceleration g.",
-        "The vertical speed increases until the floor stops the box; the free-fall model ends at impact."
+        "The vertical speed increases until the countertop stops the box; the free-fall model ends at impact."
       ]
     },
     {

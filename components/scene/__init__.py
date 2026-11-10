@@ -1,4 +1,5 @@
 from base64 import b64encode
+from hashlib import sha256
 from pathlib import Path
 
 import streamlit as st
@@ -55,12 +56,15 @@ def physics_scene(
         name: _asset_data_url(str(path), path.stat().st_mtime_ns)
         for name, path in sprite_paths.items()
     }
-    # Register against the active runtime, including after a server restart.
+    css = (COMPONENT_DIR / "scene.css").read_text(encoding="utf-8")
+    js = (COMPONENT_DIR / "scene.js").read_text(encoding="utf-8")
+    # A new asset version must not reuse a browser-cached component module.
+    asset_version = sha256((css + "\0" + js).encode("utf-8")).hexdigest()[:16]
     scene_component = component(
-        "physics_scene",
+        f"physics_scene_{asset_version}",
         html='<main id="scene" aria-label="Interactive physics scene"></main>',
-        css=(COMPONENT_DIR / "scene.css").read_text(encoding="utf-8"),
-        js=(COMPONENT_DIR / "scene.js").read_text(encoding="utf-8"),
+        css=css,
+        js=js,
     )
     result = scene_component(
         data=component_level,
