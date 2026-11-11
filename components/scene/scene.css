@@ -10,7 +10,8 @@
 * { box-sizing: border-box; }
 :host { display: block; width: 100%; color: var(--ink); font-family: var(--hand); }
 #scene {
-  --scene-duration: 4.6s;
+  --box-duration: 4.2s;
+  --cat-duration: 3.6s;
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -78,8 +79,8 @@
 #scene.cat-finished .cat-table { opacity: 1; }
 #scene.cat-finished .jumping_cat { transform: rotate(0); }
 #scene.box-finished .box { transform: translateY(30%); }
-#scene.play-box .box { animation: box-fall-once var(--scene-duration) cubic-bezier(.42,0,1,1) 1 both; }
-#scene.play-box .falling_box { animation: box-hotspot-once var(--scene-duration) cubic-bezier(.42,0,1,1) 1 both; }
+#scene.play-box .box { animation: box-fall-once var(--box-duration) cubic-bezier(.42,0,1,1) 1 both; }
+#scene.play-box .falling_box { animation: box-hotspot-once var(--box-duration) cubic-bezier(.42,0,1,1) 1 both; }
 @keyframes box-fall-once {
   0%,26% { transform: translateY(0); }
   70%,100% { transform: translateY(30%); }
@@ -88,10 +89,10 @@
   0%,26% { left: 37.5%; top: 2%; }
   70%,100% { left: 37.5%; top: 32%; }
 }
-#scene.play-cat .cat-floor { animation: cat-floor-once var(--scene-duration) linear 1 both; }
-#scene.play-cat .cat-jumping { animation: cat-jump-once var(--scene-duration) linear 1 both; }
-#scene.play-cat .cat-table { animation: cat-table-once var(--scene-duration) linear 1 both; }
-#scene.play-cat .jumping_cat { animation: hotspot-cat-once var(--scene-duration) ease-in-out 1 both; }
+#scene.play-cat .cat-floor { animation: cat-floor-once var(--cat-duration) linear 1 both; }
+#scene.play-cat .cat-jumping { animation: cat-jump-once var(--cat-duration) linear 1 both; }
+#scene.play-cat .cat-table { animation: cat-table-once var(--cat-duration) linear 1 both; }
+#scene.play-cat .jumping_cat { animation: hotspot-cat-once var(--cat-duration) ease-in-out 1 both; }
 @keyframes cat-floor-once {
   0%,26% { opacity: 1; }
   28%,100% { opacity: 0; }
