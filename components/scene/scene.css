@@ -92,31 +92,38 @@
 #scene.play-cat .cat-floor { animation: cat-floor-once var(--cat-duration) linear 1 both; }
 #scene.play-cat .cat-jumping { animation: cat-jump-once var(--cat-duration) linear 1 both; }
 #scene.play-cat .cat-table { animation: cat-table-once var(--cat-duration) linear 1 both; }
-#scene.play-cat .jumping_cat { animation: hotspot-cat-once var(--cat-duration) ease-in-out 1 both; }
+#scene.play-cat .jumping_cat { animation: hotspot-cat-once var(--cat-duration) linear 1 both; }
 @keyframes cat-floor-once {
   0%,26% { opacity: 1; }
   28%,100% { opacity: 0; }
 }
 @keyframes cat-jump-once {
-  0%,26% { opacity: 0; }
-  28%,68% { opacity: 1; }
-  70%,100% { opacity: 0; }
+  0%,26% { opacity: 0; transform: translate(-5.5%,17.5%); }
+  28% { opacity: 1; transform: translate(-4.8%,12%); }
+  36.5% { opacity: 1; transform: translate(-1.825%,-7.67%); }
+  47% { opacity: 1; transform: translate(1.85%,-23.175%); }
+  57.5% { opacity: 1; transform: translate(5.525%,-29.02%); }
+  68% { opacity: 1; transform: translate(9.2%,-25.2%); }
+  70%,100% { opacity: 0; transform: translate(9.2%,-25.2%); }
 }
 @keyframes cat-table-once {
   0%,68% { opacity: 0; }
   70%,100% { opacity: 1; }
 }
 @keyframes hotspot-cat-once {
-  0%,26% { left: 36.5%; top: 77.5%; transform: rotate(0); }
-  48% { left: 41%; top: 51.5%; transform: rotate(-4deg); }
-  70%,100% { left: 51%; top: 35%; transform: rotate(0); }
+  0%,26% { left: 36.5%; top: 77.5%; width: 8%; height: 18%; }
+  28% { left: 35.82%; top: 63.94%; width: 9.2%; height: 23.6%; }
+  36.5% { left: 38.795%; top: 44.27%; width: 9.2%; height: 23.6%; }
+  47% { left: 42.47%; top: 28.765%; width: 9.2%; height: 23.6%; }
+  57.5% { left: 46.145%; top: 22.92%; width: 9.2%; height: 23.6%; }
+  68% { left: 49.82%; top: 26.74%; width: 9.2%; height: 23.6%; }
+  70%,100% { left: 51%; top: 35%; width: 8%; height: 18%; }
 }
 @media (prefers-reduced-motion: reduce) {
   #scene.play-box .box, #scene.play-box .falling_box { animation-duration: 1ms; }
   #scene.play-cat .cat-floor, #scene.play-cat .cat-jumping,
   #scene.play-cat .cat-table, #scene.play-cat .jumping_cat { animation: none; }
-  .cat-jumping, .cat-table { display: none; }
-  .cat-floor { opacity: 1; }
+  .cat-jumping { display: none; }
 }
 @media (max-width: 600px) {
   .legend { font-size: 9px; }
