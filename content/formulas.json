@@ -12,12 +12,6 @@
     "meaning": "Near Earth's surface, an object's weight equals its mass multiplied by gravitational acceleration."
   },
   {
-    "id": "potential_energy",
-    "name": "Gravitational potential energy",
-    "expression": "E_p = mgh",
-    "meaning": "An object's stored gravitational energy increases with its mass and height above a chosen reference level."
-  },
-  {
     "id": "free_fall_velocity",
     "name": "Free-fall velocity",
     "expression": "v = v₀ + gt",
@@ -82,41 +76,5 @@
     "name": "Linear magnification",
     "expression": "M = hᵢ / hₒ",
     "meaning": "Magnification compares the image height with the original object's height."
-  },
-  {
-    "id": "density",
-    "name": "Density",
-    "expression": "ρ = m / V",
-    "meaning": "Density measures how much mass is packed into a given volume."
-  },
-  {
-    "id": "hydrostatic_pressure",
-    "name": "Hydrostatic pressure",
-    "expression": "p = ρgh",
-    "meaning": "Pressure in a stationary liquid increases with density, gravity, and depth below the surface."
-  },
-  {
-    "id": "buoyant_force",
-    "name": "Buoyant force",
-    "expression": "F_b = ρgV",
-    "meaning": "The buoyant force equals the weight of the fluid displaced by an immersed object."
-  },
-  {
-    "id": "continuity_equation",
-    "name": "Continuity equation",
-    "expression": "A₁v₁ = A₂v₂",
-    "meaning": "For steady incompressible flow, a narrower passage produces a greater fluid speed."
-  },
-  {
-    "id": "bernoulli_equation",
-    "name": "Bernoulli equation",
-    "expression": "p + ρv²/2 + ρgh = const",
-    "meaning": "Along a streamline, pressure, motion, and height exchange energy while their total remains constant."
-  },
-  {
-    "id": "wave_speed",
-    "name": "Wave speed",
-    "expression": "v = λf",
-    "meaning": "Wave speed equals the distance between wavefronts multiplied by how many pass each second."
   }
 ]
